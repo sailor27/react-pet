@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Care() {
+function Care(props) {
 
   var careStyle = {
     border: '3px dashed lavender',
-    width: '50vw',
+    minWidth: '600px',
     display: 'flex',
     flexFlow: 'column nowrap',
     justifyContent: 'center',
@@ -16,7 +17,7 @@ function Care() {
     <div style={careStyle}>
       <h1>Click buttons to care for critter</h1>
       <div style={{display: 'flex', width: '80%', justifyContent: 'space-between', paddingBottom: '150px'}}>
-        <button>Feed</button>
+        <button onClick={props.onFeed}>Feed</button>
         <button>Pet</button>
         <button>Sleep</button>
       </div>
@@ -34,5 +35,9 @@ function Care() {
     </div>
   );
 }
+
+Care.propTypes = {
+  onFeed: PropTypes.func,
+};
 
 export default Care;

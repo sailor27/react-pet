@@ -9,7 +9,7 @@ function Display(props) {
   var displayStyle = {
     border: '3px dashed magenta',
     height: '70vh',
-    width: '50vw',
+    minWidth: '600px',
     display: 'flex',
     flexFlow: 'column nowrap',
     alignItems: 'center',

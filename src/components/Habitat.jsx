@@ -14,35 +14,42 @@ class Habitat extends React.Component {
         }
       }
     };
+    this.handleFeedingCritter = this.handleFeedingCritter.bind(this);
   }
 
   componentDidMount() {
     this.updateTimer = setInterval(() =>
-      this.updateElapsedTime(),
+      this.decreaseStatus(),
     5000
     );
   }
 
-  updateElapsedTime(){
-    let newMasterCritterList = Object.assign({}, this.state.masterCritterList);
-    console.log(newMasterCritterList.Pet);
+  decreaseStatus(){
+    let newMasterCritterList = this.state.masterCritterList;
     newMasterCritterList.Pet.status -= 10;
+    this.setState({masterCritterList: newMasterCritterList});
+  }
+
+  handleFeedingCritter(){
+    console.log('handleFeedingCritter is triggered');
+    let newMasterCritterList = this.state.masterCritterList;
+    newMasterCritterList.Pet.status += 20;
     this.setState({masterCritterList: newMasterCritterList});
   }
 
   render() {
     return(
-      <div>
+      <div className="habitat">
         <style jsx> {`
-            div {
+            .habitat {
+              background-color: lightblue;
               border: 3px solid #EB6EBD;
               display: flex;
-              flex-flow: row nowrap;
             }
             `}
         </style>
         <Display critterList={this.state.masterCritterList}/>
-        <Care/>
+        <Care onFeed={this.handleFeedingCritter}/>
       </div>
 
 

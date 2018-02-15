@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 
 function Critter(props){
-  console.log(props.critterList);
   var critterStyles = {
     display: 'flex',
     width: '50vw',
