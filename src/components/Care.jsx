@@ -4,23 +4,23 @@ function Care() {
 
   var careStyle = {
     border: '3px dashed lavender',
-    height: '70vh',
     width: '50vw',
     display: 'flex',
     flexFlow: 'column nowrap',
+    justifyContent: 'center',
     alignItems: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
   };
 
   return(
     <div style={careStyle}>
       <h1>Click buttons to care for pet</h1>
-    <div style={{display: 'flex', width: '80%', justifyContent: 'space-between'}}>
-      <button>Feed</button>
-      <button>Pet</button>
-      <button>Sleep</button>
-    </div>
-    <style jsx>{`
+      <div style={{display: 'flex', width: '80%', justifyContent: 'space-between', paddingBottom: '150px'}}>
+        <button>Feed</button>
+        <button>Pet</button>
+        <button>Sleep</button>
+      </div>
+      <style jsx>{`
       button {
         border: 3px solid black;
         padding: 8px;
@@ -30,7 +30,7 @@ function Care() {
         background-color: pink;
       }
     `}
-    </style>
+      </style>
     </div>
   );
 }

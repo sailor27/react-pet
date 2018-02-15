@@ -1,17 +1,10 @@
 import React from 'react';
 import Status from './Status';
 import Critter from './Critter';
-
-var masterCritter =[
-  {
-  name: 'Browser',
-  image: 'https://media.giphy.com/media/9nIIo3LBIlzvW/giphy.gif',
-  status: "100"
-  }
-];
+import PropTypes from 'prop-types';
 
 
-function Display() {
+function Display(props) {
 
   var displayStyle = {
     border: '3px dashed magenta',
@@ -26,15 +19,20 @@ function Display() {
   return(
     <div style={displayStyle}>
       <Status/>
-      <Critter
-        name="Browser"
-        image="https://media.giphy.com/media/9nIIo3LBIlzvW/giphy.gif"
-        status="100"
-      />
+      <div>
+        {props.littleCritter.map((thing, i) =>
+          <Critter name={thing.name}
+            image={thing.image}
+            status={thing.status}
+            key={i}/>
+        )}
+      </div>
     </div>
   );
 }
 
-
+Display.propTypes = {
+  littleCritter: PropTypes.array
+};
 
 export default Display;

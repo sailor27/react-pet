@@ -8,7 +8,7 @@ function Critter(props){
   };
   return (
     <div style={critterStyles}>
-      <div className="critter-pic" >
+      <div className="critter-pic"  >
         <img src={props.image}/>
       </div>
       <style jsx>{`
