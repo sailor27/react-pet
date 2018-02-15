@@ -18,8 +18,8 @@ function Care(props) {
       <h1>Click buttons to care for critter</h1>
       <div style={{display: 'flex', width: '80%', justifyContent: 'space-between', paddingBottom: '150px'}}>
         <button onClick={props.onFeed}>Feed</button>
-        <button>Pet</button>
-        <button>Sleep</button>
+        <button onClick={props.onPet}>Pet</button>
+        <button onClick={props.onSleep}>Sleep</button>
       </div>
       <style jsx>{`
       button {
@@ -38,6 +38,8 @@ function Care(props) {
 
 Care.propTypes = {
   onFeed: PropTypes.func,
+  onPet: PropTypes.func,
+  onSleep: PropTypes.func
 };
 
 export default Care;

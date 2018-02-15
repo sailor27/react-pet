@@ -7,7 +7,7 @@ class Habitat extends React.Component {
     super(props);
     this.state = {
       masterCritterList: {
-        'Pet': {
+        'pet': {
           name: 'Browser',
           image: 'https://www.pets4homes.co.uk/images/classifieds/2013/09/07/414786/f0bc3208e2babea629a94d78878d95e1.jpg',
           status: 100
@@ -15,6 +15,8 @@ class Habitat extends React.Component {
       }
     };
     this.handleFeedingCritter = this.handleFeedingCritter.bind(this);
+    this.handlePettingCritter = this.handlePettingCritter.bind(this);
+    this.handleSleepingCritter = this.handleSleepingCritter.bind(this);
   }
 
   componentDidMount() {
@@ -26,15 +28,29 @@ class Habitat extends React.Component {
 
   decreaseStatus(){
     let newMasterCritterList = this.state.masterCritterList;
-    newMasterCritterList.Pet.status -= 10;
+    newMasterCritterList.pet.status -= 10;
     this.setState({masterCritterList: newMasterCritterList});
   }
 
   handleFeedingCritter(){
-    console.log('handleFeedingCritter is triggered');
     let newMasterCritterList = this.state.masterCritterList;
-    newMasterCritterList.Pet.status += 20;
+    newMasterCritterList.pet.status += 20;
     this.setState({masterCritterList: newMasterCritterList});
+    alert('Yum! ' + this.state.masterCritterList.pet.name + ' loves food!');
+  }
+
+  handlePettingCritter() {
+    let newMasterCritterList = this.state.masterCritterList;
+    newMasterCritterList.pet.status += 20;
+    this.setState({masterCritterList: newMasterCritterList});
+    alert('☺️ ' + this.state.masterCritterList.pet.name + ' loves pets!');
+  }
+
+  handleSleepingCritter(){
+    let newMasterCritterList = this.state.masterCritterList;
+    newMasterCritterList.pet.status += 20;
+    this.setState({masterCritterList: newMasterCritterList});
+    alert('😴! ' + this.state.masterCritterList.pet.name + ' loves to sleep!');
   }
 
   render() {
@@ -49,7 +65,7 @@ class Habitat extends React.Component {
             `}
         </style>
         <Display critterList={this.state.masterCritterList}/>
-        <Care onFeed={this.handleFeedingCritter}/>
+        <Care onFeed={this.handleFeedingCritter} onPet={this.handlePettingCritter} onSleep={this.handleSleepingCritter}/>
       </div>
 
 

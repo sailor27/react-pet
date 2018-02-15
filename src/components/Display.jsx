@@ -18,7 +18,7 @@ function Display(props) {
 
   return(
     <div style={displayStyle}>
-      <Status critterStatus={props.critterList.Pet.status}/>
+      <Status critterStatus={props.critterList.pet.status}/>
       <Critter critterList={props.critterList}/>
     </div>
   );

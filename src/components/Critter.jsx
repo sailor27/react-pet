@@ -11,7 +11,7 @@ function Critter(props){
   return (
     <div style={critterStyles}>
       <div className="critter-pic"  >
-        <img src={props.critterList.Pet.image}/>
+        <img src={props.critterList.pet.image}/>
       </div>
       <style jsx>{`
           img {
@@ -19,8 +19,8 @@ function Critter(props){
           }
       `}
       </style>
-      <h1>{props.critterList.Pet.name}</h1>
-      <h3>{props.critterList.Pet.status} health</h3>
+      <h1>{props.critterList.pet.name}</h1>
+      <h3>{props.critterList.pet.status} health</h3>
     </div>
   );
 }
