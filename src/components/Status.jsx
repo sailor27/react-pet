@@ -17,7 +17,11 @@ function Status(props) {
   return(
 
     <div style={statusStyle}>
+      <div className="bar"></div>
+      <div className="bar"></div>
+      <div className="bar"></div>
       <div>{props.critterStatus}</div>
+
 
       <style jsx>{`
           .bar{
