@@ -7,13 +7,13 @@ class Habitat extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterCritter: [
-        {
+      masterCritterList: {
+        'Pet': {
           name: 'Browser',
           image: 'https://media.giphy.com/media/9nIIo3LBIlzvW/giphy.gif',
           status: 100
         }
-      ]
+      }
     };
   }
 
@@ -27,8 +27,8 @@ class Habitat extends React.Component {
               flex-flow: row nowrap;
             }
             `}
-          </style>
-        <Display littleCritter={this.state.masterCritter}/>
+        </style>
+        <Display critterList={this.state.masterCritterList}/>
         <Care/>
       </div>
 
