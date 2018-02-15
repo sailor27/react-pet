@@ -11,26 +11,27 @@ class Habitat extends React.Component {
         {
           name: 'Browser',
           image: 'https://media.giphy.com/media/9nIIo3LBIlzvW/giphy.gif',
-          status: '100'
+          status: 100
         }
       ]
     };
   }
 
-
   render() {
     return(
-      <div className="habitatStyle">
+      <div>
         <style jsx> {`
-          .habitatStyle: {
-            border: '3px solid #EB6EBD';
-            display: 'flex';
-          }
-          `}
-        </style>
+            div {
+              border: 3px solid #EB6EBD;
+              display: flex;
+              flex-flow: row nowrap;
+            }
+            `}
+          </style>
         <Display littleCritter={this.state.masterCritter}/>
         <Care/>
       </div>
+
 
     );
   }

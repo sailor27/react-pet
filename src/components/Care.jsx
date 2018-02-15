@@ -14,7 +14,7 @@ function Care() {
 
   return(
     <div style={careStyle}>
-      <h1>Click buttons to care for pet</h1>
+      <h1>Click buttons to care for critter</h1>
       <div style={{display: 'flex', width: '80%', justifyContent: 'space-between', paddingBottom: '150px'}}>
         <button>Feed</button>
         <button>Pet</button>

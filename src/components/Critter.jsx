@@ -26,7 +26,7 @@ function Critter(props){
 Critter.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired
+  status: PropTypes.number.isRequired
 };
 
 export default Critter;

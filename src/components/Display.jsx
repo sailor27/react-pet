@@ -18,7 +18,7 @@ function Display(props) {
 
   return(
     <div style={displayStyle}>
-      <Status/>
+      <Status critterStatus={props.littleCritter[0].status}/>
       <div>
         {props.littleCritter.map((thing, i) =>
           <Critter name={thing.name}
