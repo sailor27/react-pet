@@ -5,7 +5,7 @@ function Care(props) {
 
   var careStyle = {
     border: '3px dashed lavender',
-    minWidth: '600px',
+    width: '50vw',
     display: 'flex',
     flexFlow: 'column nowrap',
     justifyContent: 'center',

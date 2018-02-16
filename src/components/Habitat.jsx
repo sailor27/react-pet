@@ -22,7 +22,7 @@ class Habitat extends React.Component {
   componentDidMount() {
     this.updateTimer = setInterval(() =>
       this.decreaseStatus(),
-    5000
+    7000
     );
   }
 
@@ -58,7 +58,6 @@ class Habitat extends React.Component {
       <div className="habitat">
         <style jsx> {`
             .habitat {
-              background-color: lightblue;
               border: 3px solid #EB6EBD;
               display: flex;
             }
