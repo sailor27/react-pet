@@ -16,6 +16,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-progressbar": "^15.4.1",
     "react-router-dom": "^4.2.2",
     "styled-jsx": "^2.2.4",
     "uuid": "^3.2.1"

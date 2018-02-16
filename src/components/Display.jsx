@@ -18,21 +18,14 @@ function Display(props) {
 
   return(
     <div style={displayStyle}>
-      <Status critterStatus={props.littleCritter[0].status}/>
-      <div>
-        {props.littleCritter.map((thing, i) =>
-          <Critter name={thing.name}
-            image={thing.image}
-            status={thing.status}
-            key={i}/>
-        )}
-      </div>
+      <Status critterStatus={props.critterList.pet.status}/>
+      <Critter critterList={props.critterList}/>
     </div>
   );
 }
 
 Display.propTypes = {
-  littleCritter: PropTypes.array
+  critterList: PropTypes.object
 };
 
 export default Display;

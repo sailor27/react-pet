@@ -1,35 +1,70 @@
 import React from 'react';
 import Display from './Display';
 import Care from  './Care';
-
 class Habitat extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      masterCritter: [
-        {
+      masterCritterList: {
+        'pet': {
           name: 'Browser',
-          image: 'https://media.giphy.com/media/9nIIo3LBIlzvW/giphy.gif',
+          image: 'https://www.pets4homes.co.uk/images/classifieds/2013/09/07/414786/f0bc3208e2babea629a94d78878d95e1.jpg',
           status: 100
         }
-      ]
+      }
     };
+    this.handleFeedingCritter = this.handleFeedingCritter.bind(this);
+    this.handlePettingCritter = this.handlePettingCritter.bind(this);
+    this.handleSleepingCritter = this.handleSleepingCritter.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateTimer = setInterval(() =>
+      this.decreaseStatus(),
+    7000
+    );
+  }
+
+  decreaseStatus(){
+    let newMasterCritterList = this.state.masterCritterList;
+    newMasterCritterList.pet.status -= 10;
+    this.setState({masterCritterList: newMasterCritterList});
+  }
+
+  handleFeedingCritter(){
+    let newMasterCritterList = this.state.masterCritterList;
+    newMasterCritterList.pet.status += 20;
+    this.setState({masterCritterList: newMasterCritterList});
+    alert('Yum! ' + this.state.masterCritterList.pet.name + ' loves food!');
+  }
+
+  handlePettingCritter() {
+    let newMasterCritterList = this.state.masterCritterList;
+    newMasterCritterList.pet.status += 20;
+    this.setState({masterCritterList: newMasterCritterList});
+    alert('☺️ ' + this.state.masterCritterList.pet.name + ' loves pets!');
+  }
+
+  handleSleepingCritter(){
+    let newMasterCritterList = this.state.masterCritterList;
+    newMasterCritterList.pet.status += 20;
+    this.setState({masterCritterList: newMasterCritterList});
+    alert('😴! ' + this.state.masterCritterList.pet.name + ' loves to sleep!');
   }
 
   render() {
     return(
-      <div>
+      <div className="habitat">
         <style jsx> {`
-            div {
+            .habitat {
               border: 3px solid #EB6EBD;
               display: flex;
-              flex-flow: row nowrap;
             }
             `}
-          </style>
-        <Display littleCritter={this.state.masterCritter}/>
-        <Care/>
+        </style>
+        <Display critterList={this.state.masterCritterList}/>
+        <Care onFeed={this.handleFeedingCritter} onPet={this.handlePettingCritter} onSleep={this.handleSleepingCritter}/>
       </div>
 
 

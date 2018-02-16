@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 
 function Critter(props){
   var critterStyles = {
-
+    display: 'flex',
+    width: '50vw',
+    flexFlow: 'column nowrap'
   };
   return (
     <div style={critterStyles}>
       <div className="critter-pic"  >
-        <img src={props.image}/>
+        <img src={props.critterList.pet.image}/>
       </div>
       <style jsx>{`
           img {
@@ -17,16 +19,14 @@ function Critter(props){
           }
       `}
       </style>
-      <h1>{props.name}</h1>
-      <h3>{props.status} health</h3>
+      <h1>{props.critterList.pet.name}</h1>
+      <h3>{props.critterList.pet.status} health</h3>
     </div>
   );
 }
 
 Critter.propTypes = {
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  status: PropTypes.number.isRequired
+  critterList: PropTypes.object
 };
 
 export default Critter;
