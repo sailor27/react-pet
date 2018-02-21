@@ -9,7 +9,7 @@ class Habitat extends React.Component {
       masterCritterList: {
         'pet': {
           name: 'Browser',
-          image: 'https://www.pets4homes.co.uk/images/classifieds/2013/09/07/414786/f0bc3208e2babea629a94d78878d95e1.jpg',
+          image: 'https://media.giphy.com/media/9nIIo3LBIlzvW/giphy.gif',
           status: 100
         }
       }

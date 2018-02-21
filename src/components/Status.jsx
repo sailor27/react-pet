@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 
 
 function Status(props) {
-  let bars = (props.critterStatus / 5);
-
-  function makeDiv(){
-    for (let i = 20; i < bars; i--){
-      console.log(i);
-      <div className="bar"></div>;
+  let status = (props.critterStatus / 5);
+  console.log(status);
+  function makeBars(){
+    for(let i = status; i > 0; i--){
+      document.createElement('div', {class: 'bar'});
+      // console.log('hi');
     }
   }
+  let bars = makeBars();
+
+  console.log(bars);
 
   var statusStyle = {
     border: '3px solid black',
@@ -24,16 +27,13 @@ function Status(props) {
     alignItems: 'center'
   };
   return(
-    makeDiv(),
+
     <div style={statusStyle}>
-
-
+      {bars}
       <div className="bar"></div>
       <div className="bar"></div>
       <div className="bar"></div>
       <div>{props.critterStatus}</div>
-
-
 
       <style jsx>{`
           .bar{
